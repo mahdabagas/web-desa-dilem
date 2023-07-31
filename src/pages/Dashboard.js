@@ -182,9 +182,15 @@ const Dashboard = () => {
               Dapatkan Informasi update seputar Kegiatan Desa Dilem disini.
             </h2>
           </div>
-          <div className="w-full grid grid-cols-3 gap-10 py-10">
+          <div className="w-full grid grid-cols-3 gap-8 py-10">
             {kegiatan.map((value) => {
-              return <CardInformasi data={value} />;
+              return (
+                <div>
+                  <Link to={`informasi/${value.ID}`}>
+                    <CardInformasi data={value} />
+                  </Link>
+                </div>
+              );
             })}
           </div>
           <Link to="/informasi" className="w-full flex justify-center">
@@ -207,7 +213,11 @@ const Dashboard = () => {
           </div>
           <div className="w-full grid grid-cols-4 gap-10 py-10">
             {umkm.map((value) => {
-              return <CardUMKM data={value} />;
+              return (
+                <Link to={`/umkm/${value.id}`}>
+                  <CardUMKM data={value} />
+                </Link>
+              );
             })}
           </div>
           <div className="w-full flex justify-center">
@@ -231,7 +241,7 @@ const Dashboard = () => {
           <div className="grid grid-cols-2">
             {wisata.map((value) => {
               return (
-                <>
+                <Link to={`/wisata/${value.id}`}>
                   <div className="max-w-3xl mx-auto rounded-[20px] overflow-hidden mb-4">
                     <div className="w-full h-80">
                       <img
@@ -244,7 +254,7 @@ const Dashboard = () => {
                       <h5>{value.nama}</h5>
                     </div>
                   </div>
-                </>
+                </Link>
               );
             })}
           </div>

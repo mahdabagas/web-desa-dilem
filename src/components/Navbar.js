@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import logo from "../assets/logo.png";
 
 const Navbar = () => {
   return (
@@ -6,7 +7,13 @@ const Navbar = () => {
       <nav className="w-full fixed top-0 left-0 right-0 font-poppins bg-accent/80">
         <div className="w-5/6 mx-auto flex justify-between text-xl text-primary py-8 h-20 items-center">
           <div className="flex gap-2 items-center">
-            <div className="bg-primary w-10 h-10 rounded-full"></div>
+            <div className="w-10 h-10 rounded-full">
+              <img
+                src={logo}
+                alt=""
+                className="w-fll h-full object-cover object-center"
+              />
+            </div>
             <Link>Desa Dilem</Link>
           </div>
           <div className="hover:border-b border-primary duration-300 hover:font-medium">

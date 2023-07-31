@@ -4,7 +4,7 @@ import Navbar from "../components/Navbar";
 import { useEffect, useRef, useState } from "react";
 import { url } from "../api/url";
 
-const DetailUMKM = () => {
+const DetailWisata = () => {
   const kodeParams = useRef();
   kodeParams.current = useParams();
   const [detail, setDetail] = useState({});
@@ -13,7 +13,7 @@ const DetailUMKM = () => {
     console.log(kodeParams.current);
     const getDetail = async () => {
       try {
-        const { data } = await url.get(`umkm/${kodeParams.current.id}`);
+        const { data } = await url.get(`wisata/${kodeParams.current.id}`);
         setDetail(data.data);
       } catch (err) {
         console.log(err);
@@ -40,6 +40,9 @@ const DetailUMKM = () => {
             <h1 className="font-semibold text-[44px]">{detail.nama}</h1>
             <h2 className="text-[26px]">Alamat : {detail.alamat}</h2>
             <h2 className="text-[26px]">Kontak : {detail.kontak}</h2>
+            <h2 className="text-[26px]">Harga Tiket : {detail.harga_tiket}</h2>
+            <h2 className="text-[26px]">Jam Buka : {detail.jam_buka}</h2>
+            <h2 className="text-[26px]">Harga Tutup : {detail.jam_tutup}</h2>
             <hr />
             <p className="text-[22px]">Deskripsi : {detail.deskripsi}</p>
           </div>
@@ -50,4 +53,4 @@ const DetailUMKM = () => {
   );
 };
 
-export default DetailUMKM;
+export default DetailWisata;

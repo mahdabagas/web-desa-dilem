@@ -5,6 +5,7 @@ import Pariwisata from "./pages/Pariwisata";
 import Informasi from "./pages/Informasi";
 import Detail from "./pages/Detail";
 import DetailUMKM from "./pages/DetailUMKM";
+import DetailWisata from "./pages/DetailWisata";
 
 function App() {
   return (
@@ -15,7 +16,7 @@ function App() {
       <Route path="/umkm" element={<UMKM />} />
       <Route path="/umkm/:id" element={<DetailUMKM />} />
       <Route path="/wisata" element={<Pariwisata />} />
-      <Route path="/wisata/:id" element={<Pariwisata />} />
+      <Route path="/wisata/:id" element={<DetailWisata />} />
     </Routes>
   );
 }
