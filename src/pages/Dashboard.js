@@ -238,23 +238,25 @@ const Dashboard = () => {
             <h1 className="text-[44px] font-semibold ">Wisata</h1>
             <h2 className="text-[44px] font-medium">Desa Dilem</h2>
           </div>
-          <div className="grid grid-cols-2">
+          <div className="grid grid-cols-2 gap-10">
             {wisata.map((value) => {
               return (
-                <Link to={`/wisata/${value.id}`}>
-                  <div className="max-w-3xl mx-auto rounded-[20px] overflow-hidden mb-4">
-                    <div className="w-full h-80">
-                      <img
-                        src={value.gambar}
-                        alt="card_1"
-                        className="w-full h-full object-cover object-center"
-                      />
+                <div>
+                  <Link to={`/wisata/${value.id}`}>
+                    <div className="max-w-3xl mx-auto rounded-[20px] overflow-hidden mb-4">
+                      <div className="w-full h-80">
+                        <img
+                          src={value.gambar}
+                          alt="card_1"
+                          className="w-full h-full object-cover object-center"
+                        />
+                      </div>
+                      <div className="bg-primary text-center py-4 text-2xl text-white ">
+                        <h5>{value.nama}</h5>
+                      </div>
                     </div>
-                    <div className="bg-primary text-center py-4 text-2xl text-white ">
-                      <h5>{value.nama}</h5>
-                    </div>
-                  </div>
-                </Link>
+                  </Link>
+                </div>
               );
             })}
           </div>
