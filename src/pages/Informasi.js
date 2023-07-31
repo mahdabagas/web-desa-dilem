@@ -5,6 +5,7 @@ import Navbar from "../components/Navbar";
 import CardInformasi from "../components/CardInformasi";
 import Footer from "../components/Footer";
 import CardDetail from "../components/CardDetail";
+import { Link } from "react-router-dom";
 
 const Informasi = () => {
   // get umkm
@@ -37,7 +38,16 @@ const Informasi = () => {
         <div className="w-5/6 py-[120px] mx-auto">
           <div className="w-full grid grid-cols-3 gap-20">
             {informasi.map((value) => {
-              return <CardDetail gambar={value.gambar} judul={value.tentang_desa} />;
+              return (
+                <>
+                  <Link to={`/informasi/${value.ID}`}>
+                    <CardDetail
+                      gambar={value.gambar}
+                      judul={value.tentang_desa}
+                    />
+                  </Link>
+                </>
+              );
             })}
           </div>
         </div>

@@ -4,7 +4,7 @@ import Navbar from "../components/Navbar";
 import { useEffect, useRef, useState } from "react";
 import { url } from "../api/url";
 
-const Detail = () => {
+const DetailUMKM = () => {
   const kodeParams = useRef();
   kodeParams.current = useParams();
   const [detail, setDetail] = useState({});
@@ -13,9 +13,7 @@ const Detail = () => {
     console.log(kodeParams.current);
     const getDetail = async () => {
       try {
-        const { data } = await url.get(
-          `info-kegiatan/${kodeParams.current.id}`
-        );
+        const { data } = await url.get(`umkm/${kodeParams.current.id}`);
         setDetail(data.data);
       } catch (err) {
         console.log(err);
@@ -39,8 +37,10 @@ const Detail = () => {
         </div>
         <div className="w-5/6 py-16 mx-auto">
           <div className="text-secondary flex flex-col gap-4">
-            <h1 className="font-semibold text-[44px]">{detail.tentang_desa}</h1>
-            <h2 className="text-[26px]">Tanggal : {detail.tanggal}</h2>
+            <h1 className="font-semibold text-[44px]">{detail.nama}</h1>
+            <h2 className="text-[26px]">Alamat : {detail.alamat}</h2>
+            <h2 className="text-[26px]">Kontak : {detail.kontak}</h2>
+            <h2 className="text-[26px]">Alamat : {detail.alamat}</h2>
             <hr />
             <p className="text-[22px]">Deskripsi : {detail.deskripsi}</p>
           </div>
@@ -51,4 +51,4 @@ const Detail = () => {
   );
 };
 
-export default Detail;
+export default DetailUMKM;
