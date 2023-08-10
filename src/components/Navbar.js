@@ -1,12 +1,18 @@
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import logo from "../assets/logo.png";
+
+//gambar
+import bgPrimary from "../assets/bg-cl-primary.png";
 
 const Navbar = () => {
   return (
     <>
-      <nav className="w-full fixed top-0 left-0 right-0 font-poppins bg-accent/80">
-        <div className="w-5/6 mx-auto flex justify-between text-xl text-primary py-8 h-20 items-center">
-          <div className="flex gap-2 items-center">
+      <nav
+        className="w-full sticky top-0 z-50 drop-shadow-2xl bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: `url(${bgPrimary})` }}
+      >
+        <div className="w-5/6 mx-auto flex justify-between text-xl text-secondary items-center py-8">
+          <Link to="/" className="flex gap-2 items-center">
             <div className="w-10 h-10 rounded-full">
               <img
                 src={logo}
@@ -14,29 +20,66 @@ const Navbar = () => {
                 className="w-fll h-full object-cover object-center"
               />
             </div>
-            <Link>Desa Dilem</Link>
-          </div>
-          <div className="hover:border-b border-primary duration-300 hover:font-medium">
-            <Link to="/">Beranda</Link>
-          </div>
-          <div className="hover:border-b border-primary duration-300 hover:font-medium">
-            <Link>Sekilas</Link>
-          </div>
-          <div className="hover:border-b border-primary duration-300 hover:font-medium">
-            <Link>Visi Misi</Link>
-          </div>
-          <div className="hover:border-b border-primary duration-300 hover:font-medium">
-            <Link to="/informasi">Informasi</Link>
-          </div>
-          <div className="hover:border-b border-primary duration-300 hover:font-medium">
-            <Link to="/umkm">UMKM</Link>
-          </div>
-          <div className="hover:border-b border-primary duration-300 hover:font-medium">
-            <Link to="/wisata">Wisata</Link>
-          </div>
-          <div className="hover:border-b border-primary duration-300 hover:font-medium">
-            <Link>Masuk</Link>
-          </div>
+            <h1>Desa Dilem</h1>
+          </Link>
+          <NavLink
+            to={"/"}
+            className={({ isActive }) =>
+              isActive ? "border-b border-secondary font-medium" : ""
+            }
+          >
+            Beranda
+          </NavLink>
+          <NavLink
+            to={"/sekilas"}
+            className={({ isActive }) =>
+              isActive ? "border-b border-secondary font-medium" : ""
+            }
+            preventScrollReset={true}
+          >
+            Sekilas
+          </NavLink>
+          <NavLink
+            to={"/visi-misi"}
+            className={({ isActive }) =>
+              isActive ? "border-b border-secondary font-medium" : ""
+            }
+          >
+            Visi Misi
+          </NavLink>
+          <NavLink
+            to={"/informasi"}
+            className={({ isActive }) =>
+              isActive ? "border-b border-secondary font-medium" : ""
+            }
+          >
+            Informasi
+          </NavLink>
+          <NavLink
+            to={"/umkm"}
+            className={({ isActive }) =>
+              isActive ? "border-b border-secondary font-medium" : ""
+            }
+            preventScrollReset
+          >
+            UMKM
+          </NavLink>
+          <NavLink
+            to={"/wisata"}
+            className={({ isActive }) =>
+              isActive ? "border-b border-secondary font-medium" : ""
+            }
+          >
+            Wisata
+          </NavLink>
+          <NavLink
+            to={"/login"}
+            className={({ isActive }) =>
+              isActive ? "border-b border-secondary font-medium" : ""
+            }
+          >
+            Masuk
+          </NavLink>
         </div>
       </nav>
     </>

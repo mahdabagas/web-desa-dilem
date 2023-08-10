@@ -4,7 +4,7 @@ import Navbar from "../components/Navbar";
 import { useEffect, useRef, useState } from "react";
 import { url } from "../api/url";
 
-const Detail = () => {
+const DetailInformasi = () => {
   const kodeParams = useRef();
   kodeParams.current = useParams();
   const [detail, setDetail] = useState({});
@@ -51,4 +51,4 @@ const Detail = () => {
   );
 };
 
-export default Detail;
+export default DetailInformasi;
