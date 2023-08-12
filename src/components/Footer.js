@@ -9,7 +9,7 @@ const Footer = ({ check }) => {
 
   useEffect(() => {
     check ? setBg(bgPrimary) : setBg(bgSecondary);
-  }, []);
+  }, [check]);
 
   return (
     <>

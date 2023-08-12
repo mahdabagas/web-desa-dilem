@@ -1,4 +1,4 @@
-const CardDetail = ({ gambar, judul, deskripsi }) => {
+const CardAdmin = ({ gambar, judul, deskripsi, deleteHandler }) => {
   // Menyingkat teks
   const shortText = (deskripsi) => {
     const splitText = deskripsi.split(" ", 8);
@@ -7,7 +7,8 @@ const CardDetail = ({ gambar, judul, deskripsi }) => {
   };
   return (
     <>
-      <div className="w-full h-full rounded-[20px] overflow-hidden drop-shadow-xl">
+      <div className="w-full h-full rounded-[20px] overflow-hidden drop-shadow-xl relative">
+        
         <div className="w-full h-64 ">
           <img
             src={gambar}
@@ -24,4 +25,4 @@ const CardDetail = ({ gambar, judul, deskripsi }) => {
   );
 };
 
-export default CardDetail;
+export default CardAdmin;

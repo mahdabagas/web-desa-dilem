@@ -18,7 +18,6 @@ const Pariwisata = () => {
       try {
         const { data } = await url.get("/wisata");
         setPariwisata(data.data);
-        console.log(pariwisata);
       } catch (err) {
         console.log(err);
       }

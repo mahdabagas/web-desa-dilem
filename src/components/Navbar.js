@@ -73,7 +73,7 @@ const Navbar = () => {
             Wisata
           </NavLink>
           <NavLink
-            to={"/login"}
+            to={"/masuk"}
             className={({ isActive }) =>
               isActive ? "border-b border-secondary font-medium" : ""
             }

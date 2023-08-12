@@ -3,6 +3,7 @@ import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 import { useEffect, useRef, useState } from "react";
 import { url } from "../api/url";
+import bgPrimary from "../assets/bg-cl-primary.png";
 
 const DetailUMKM = () => {
   const kodeParams = useRef();
@@ -25,8 +26,9 @@ const DetailUMKM = () => {
     <>
       <Navbar />
       <section
-        id="list UMKM"
-        className="w-full min-h-screen bg-primary font-poppins"
+        id="list_Umkm"
+        className="w-full min-h-screen bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: `url(${bgPrimary})` }}
       >
         <div className="w-full h-[500px]">
           <img

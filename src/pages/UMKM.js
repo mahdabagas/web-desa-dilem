@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import { url } from "../api/url";
 import decoration from "../assets/decoration.png";
 import Navbar from "../components/Navbar";
-import CardUMKM from "../components/CardUMKM";
 import Footer from "../components/Footer";
 import CardDetail from "../components/CardDetail";
 import { Link } from "react-router-dom";
@@ -19,7 +18,6 @@ const UMKM = () => {
       try {
         const { data } = await url.get("/umkm");
         setUmkm(data.data);
-        console.log(umkm);
       } catch (err) {
         console.log(err);
       }

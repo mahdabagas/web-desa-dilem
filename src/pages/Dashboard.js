@@ -54,7 +54,6 @@ const Dashboard = () => {
       try {
         const { data } = await url.get("/umkm");
         setUmkm(data.data);
-        console.log(umkm);
       } catch (err) {
         console.log(err);
       }
